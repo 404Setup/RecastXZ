@@ -1,0 +1,22 @@
+[package]
+name = "recastxz"
+authors = ["404"]
+version = "2.5.0"
+edition = "2024"
+
+[profile.release]
+opt-level = 3
+codegen-units = 1
+lto = true
+strip = false
+panic = "abort"
+
+[profile.release.package."*"]
+opt-level = 3
+
+[dependencies]
+libdeflater = "1.25.0"
+jni = "0.21.1"
+
+[lib]
+crate-type = ["cdylib"]
